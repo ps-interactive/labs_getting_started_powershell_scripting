@@ -1,33 +1,33 @@
 ## IF Syntax
 $variable = "value"
 
-if($variable) {
-    Write-Output "The $variable check returned true"
+if($variable) {
+    Write-Output "The $variable check returned true"
 }
 
 
 ## IF / ELSE Syntax
 $variable = "value"
 
-if($variable){	
-    Write-Output "The $variable check returned true"
+if($variable){	
+    Write-Output "The $variable check returned true"
 }
-else{	
-    Write-Output "The $variable check returned false"
+else{	
+    Write-Output "The $variable check returned false"
 }
 
 ## IF / ELSEIF / ELSE Syntax
 $variableone = "value"
 $variabletwo = "value"
 
-if($variableone){	
-    Write-Output "The $variableone check returned true"
-}
-elseif($variabletwo){	
-    Write-Output "The $variabletwo check returned true"}
-    
-else{	
-    Write-Output "The $variableone and $variabletwo check returned false"
+if($variableone){	
+    Write-Output "The $variableone check returned true"
+}
+elseif($variabletwo){	
+    Write-Output "The $variabletwo check returned true"}
+    
+else{	
+    Write-Output "The $variableone and $variabletwo check returned false"
 }
 
 ## IF Comparision
@@ -55,7 +55,7 @@ if($variable –match $comparevariable) {
 }
 
 ## IF Collection
-$array = 1..10 
+$array = 1..10 
 $comparevariable = 6
 
 # If current array value is greater than compare value
@@ -114,8 +114,8 @@ $variableTwo = "3"
 $textVariable = $true
 
 # Compare both variable values using "-eq" then return true / false or message
-($variableOne –eq $variableTwo) ? $true : $false
-($variableOne –eq $variableTwo) ? ("$variableOne is greater than $variableTwo ") : ("$variableOne is less than $variableTwo ")
+($variableOne –eq $variableTwo) ? $true : $false
+($variableOne –eq $variableTwo) ? ("$variableOne is greater than $variableTwo ") : ("$variableOne is less than $variableTwo ")
 
 # Compare text variable values using "-eq" then return true or false
 ($textVariable) ? "Value is true" : "Value is false"
@@ -140,51 +140,51 @@ Do {
 ## Switch Statement
 $number = 3
 
-Switch ($number) {	
-    5	{ Write-Host "Number equals 5" }	
-    10	{ Write-Host "Number equals 10" }	
-    20	{ Write-Host "Number equals 20" }	
-    Default	{ Write-Host "Number is not equal to 5, 10, or 20"}
+Switch ($number) {	
+    5	{ Write-Host "Number equals 5" }	
+    10	{ Write-Host "Number equals 10" }	
+    20	{ Write-Host "Number equals 20" }	
+    Default	{ Write-Host "Number is not equal to 5, 10, or 20"}
 }
 
 ## Multiple Expression Switch Statement
 $number1 = 5
 $number2 = 11
 
-Switch ($number1, $number2) {	
-    5	{ Write-Host "Number equals 5" }	
-    10	{ Write-Host "Number equals 10" }	
-    20	{ Write-Host "Number equals 20" }	
-    Default	{ Write-Host "Number is not equal to 5, 10, or 20"}
+Switch ($number1, $number2) {	
+    5	{ Write-Host "Number equals 5" }	
+    10	{ Write-Host "Number equals 10" }	
+    20	{ Write-Host "Number equals 20" }	
+    Default	{ Write-Host "Number is not equal to 5, 10, or 20"}
 }
 
 ## FOREACH Loop
 $collection = 1,2,3,4,5,6,7,8,9,10 
 
-ForEach ($item in $collection) { 	
-    Write-Host "Current Number: $item"
+ForEach ($item in $collection) { 	
+    Write-Host "Current Number: $item"
 } 
 
 # FORACH Loop with Range Operator
 $collection = 1..10 
 
-ForEach ($item in $collection) { 	
-    Write-Host "Current Number: $item"
+ForEach ($item in $collection) { 	
+    Write-Host "Current Number: $item"
 } 
 
 # FOREACH Loop with Test Values
 $collection = 'A','B','C','D','E','F','G','H'
 
-ForEach ($item in $collection) { 	
-    Write-Host "Current Letter: $item"
+ForEach ($item in $collection) { 	
+    Write-Host "Current Letter: $item"
 } 
 
 
 # FOREACH Loop FIies in Folder
 $path = "C:\Documents"
 
-ForEach ($file in Get-ChildItem $path) { 	
-    Write-Host "Current Filename: $file"
+ForEach ($file in Get-ChildItem $path) { 	
+    Write-Host "Current Filename: $file"
 }
 
 
