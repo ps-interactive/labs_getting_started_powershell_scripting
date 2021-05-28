@@ -4,24 +4,24 @@ $path = "C:\Temp\Documents"
 $outputPath = "C:\Temp\Output"
 
 # Iterate Files Function
-Function Get-Files{	
-    Param(		
-        [Parameter(Mandatory=$true)]			
-        [string]$FileType	
-    )
+Function Get-Files { 	
+    Param( 		
+        [Parameter(Mandatory=$true)] 			
+        [string]$FileType 	
+    )  
     
-    Get-ChildItem -Path "$path\*.$FileType" -Recurse -Force
+    Get-ChildItem -Path "$path\*.$FileType" -Recurse -Force 
 }
 
 # Create Class for Autocomplete Values
-class Cities : System.Management.Automation.IValidateSetValuesGenerator{	
-    [string[]] GetValidValues()	{		
-        $Cities = @('1.4 Million','750 Thousand','2 Million','500 Thousand')		
-        return $Cities	
-    }
+class Cities : System.Management.Automation.IValidateSetValuesGenerator { 	
+    [string[]] GetValidValues() 	{ 		
+        $Cities = @('1.4 Million','750 Thousand','2 Million','500 Thousand') 		
+        return $Cities 	
+    } 
 }
 
-Function Test-PopulationOfHawaii{	
+Function Test-PopulationOfHawaii { 	
 
     [CmdLetBinding()]
     param
@@ -31,33 +31,33 @@ Function Test-PopulationOfHawaii{
         [string] $Answer
     )
 
-    if($Answer -eq "1.4 Million")	{		
-        Write-Host "Correct!!" -ForegroundColor Green	
-    }	else	{		
-        Write-Host "Incorrect!!" -ForegroundColor Green	
-    }
+    if($Answer -eq "1.4 Million") 	{ 		
+        Write-Host "Correct!!" -ForegroundColor Green 	
+    } 	else 	{ 		
+        Write-Host "Incorrect!!" -ForegroundColor Green 	
+    } 
 }
 
 
-Function Get-MathAnswer{
-	param(		
-        [int] $numberOne,		
-        [int] $numberTwo,
+Function Get-MathAnswer {
+	param( 		
+        [int] $numberOne, 		
+        [int] $numberTwo, 
         [ValidateSet("Add", "Subtract", "Multiply", "Divide")]		
-        [string] $mathoperator	
-    )
+        [string] $mathoperator 	
+    ) 
     
     [int]$answer = ""
 
     Write-Host "Math Operator = $mathoperator"
 
-    if($mathoperator –eq "Add") {
+    if($mathoperator  –eq "Add") { 
         $answer = Invoke-AddNumbers $numberOne $numberTwo
-    }elseif($mathoperator –eq "Substract") {
+    } elseif($mathoperator  –eq "Substract") { 
         $answer = Invoke-SubstractNumbers $numberOne $numberTwo
-    }elseif($mathoperator –eq "Multiply") {
+    } elseif($mathoperator  –eq "Multiply") { 
         $answer = Invoke-MultiplyNumbers $numberOne $numberTwo
-    }elseif($mathoperator –eq "Divide") {}else{
+    } elseif($mathoperator  –eq "Divide") { } else{ 
         $answer = Invoke-DivideNumbers $numberOne $numberTwo
     }
 
